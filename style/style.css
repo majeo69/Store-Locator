@@ -1,0 +1,233 @@
+body {
+	font-family: 'Courier New', Courier, monospace;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+#map {
+	width: 100%;
+	height: 100%;
+}
+
+.title {
+	position: absolute;
+	z-index: 100;
+	font-size: 50px;
+	font-weight: bolder;
+	color: rgb(18, 177, 240);
+	text-transform: capitalize;
+	top: 100px;
+	left: 50px;
+	margin: 50px;
+	background-color: transparent 50%;
+}
+
+.search-container {
+	border-radius: 35px;
+	position: absolute;
+	z-index: 100;
+	top: 230px;
+	left: 100px;
+	width: 400px;
+	height: 60px;
+	background: rgb(2, 0, 36);
+	background: -moz-linear-gradient(153deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 28, 1) 12%, rgba(9, 40, 125, 1) 35%, rgba(128, 6, 163, 1) 54%, rgba(213, 58, 118, 1) 79%, rgba(0, 212, 255, 1) 100%);
+	background: -webkit-linear-gradient(153deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 28, 1) 12%, rgba(9, 40, 125, 1) 35%, rgba(128, 6, 163, 1) 54%, rgba(213, 58, 118, 1) 79%, rgba(0, 212, 255, 1) 100%);
+	background: linear-gradient(153deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 28, 1) 12%, rgba(9, 40, 125, 1) 35%, rgba(128, 6, 163, 1) 54%, rgba(213, 58, 118, 1) 79%, rgba(0, 212, 255, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#00d4ff", GradientType=1);
+	display: flex;
+	opacity: 80%;
+	transition: ease-in-out;
+	transition-duration: 250ms;
+}
+
+.search-container .search {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.search-container input {
+	width: 100%;
+	font-size: 25px;
+	background-color: transparent;
+	border: none;
+	color: white;
+	cursor: pointer;
+}
+
+.search-container input:focus {
+	outline: none;
+}
+
+.search i {
+	font-size: 25px;
+	color: white;
+}
+
+.stores-list-container {
+	width: 400px;
+	position: absolute;
+	z-index: 100;
+	background: white;
+	left: 100px;
+	top: 320px;
+	border-radius: 30px;
+	bottom: 20px;
+	display: flex;
+	overflow-y: hidden;
+	padding-bottom: 30px;
+	opacity: 80%;
+}
+
+.store-container {
+	border-bottom: 1px solid #979797;
+	display: flex;
+	cursor: pointer;
+}
+
+.store-info-container {
+	flex-grow: 1;
+}
+
+.store-number-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.store-address {
+	font-size: 21px;
+	color: #514C4C;
+	margin-top: 30px;
+}
+
+.store-address span {
+	display: block;
+}
+
+.store-phone-number {
+	color: #B5ADAD;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.store-number {
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	border-radius: 50%;
+	font-size: 15px;
+	background: rgb(2, 0, 36);
+	background: -moz-linear-gradient(153deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 28, 1) 12%, rgba(9, 40, 125, 1) 35%, rgba(128, 6, 163, 1) 54%, rgba(213, 58, 118, 1) 79%, rgba(0, 212, 255, 1) 100%);
+	background: -webkit-linear-gradient(153deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 28, 1) 12%, rgba(9, 40, 125, 1) 35%, rgba(128, 6, 163, 1) 54%, rgba(213, 58, 118, 1) 79%, rgba(0, 212, 255, 1) 100%);
+	background: linear-gradient(153deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 28, 1) 12%, rgba(9, 40, 125, 1) 35%, rgba(128, 6, 163, 1) 54%, rgba(213, 58, 118, 1) 79%, rgba(0, 212, 255, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#00d4ff", GradientType=1);
+	opacity: 80%;
+}
+
+.stores-list {
+	flex-grow: 1;
+	overflow-y: scroll;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.store-info-window {
+	min-width: 300px;
+	font-size: 18px;
+	padding: 8px;
+	background-color: rgba(132, 11, 148, 0.801);
+}
+
+.store-info-name {
+	font-size: 25px;
+	font-weight: bolder;
+	color: rgba(0, 0, 0, .87);
+}
+
+.store-info-status {
+	margin-top: 6px;
+	border-bottom: 1px solid #ff080829;
+	padding-bottom: 6px;
+	border-radius: 50%;
+}
+
+.store-info-address,
+.store-info-phone {
+	margin-top: 8px;
+	display: flex;
+	align-items: center;
+}
+
+.store-info-address .circle,
+.store-info-phone .circle {
+	width: 30px;
+	height: 30px;
+	background-color: rgb(27, 25, 161);
+	color: white;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	margin-right: 8px;
+}
+
+.search i {
+	cursor: pointer;
+	color: #1985A1;
+}
+
+.store-container-background {
+	display: flex;
+	flex-grow: 1;
+	border-radius: 18px;
+	padding-left: 8px;
+	padding-right: 8px;
+	margin-bottom: 12px;
+	margin-top: 12px;
+	transition: all ease-in-out;
+	transition-duration: 250ms;
+}
+
+.store-container-background:hover {
+	background-color: black;
+}
+
+#style-selector-control #style-selector {
+	padding: 10px;
+	margin: 10px;
+	cursor: pointer;
+	margin-right: 100px;
+}
+
+map-control {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+	font-family: "Roboto", "sans-serif";
+	margin: 10px;
+	display: none;
+	opacity: 1;
+}
+
+#map .map-control {
+	display: block;
+}
+
+.selector-control {
+	font-size: 14px;
+	line-height: 30px;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 37px;
+	width: 150px;
+	opacity: .7;
+}
